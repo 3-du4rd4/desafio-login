@@ -109,7 +109,7 @@ SECRET_KEY=gerar_uma_chave_secreta_django
 ```
 
 - `EMAIL_HOST_USER`: O seu e-mail do Gmail (ou outro serviço de e-mail, se preferir).
-- `EMAIL_HOST_PASSWORD`: A senha do seu aplicativo, que você pode gerar através das configurações de segurança da sua conta do Gmail (caso utilize o Gmail). Saiba mais sobre senhas de app no Gmail aqui.
+- `EMAIL_HOST_PASSWORD`: A senha do seu aplicativo, que você pode gerar através das configurações de segurança da sua conta do Gmail (caso utilize o Gmail). Saiba mais sobre senhas de app no Gmail [aqui](https://support.google.com/accounts/answer/185833?hl=pt-BR).
 - `SECRET_KEY`: Sua chave secreta do Django, que deve ser mantida privada.
 
 O Django usará essas credenciais para enviar e-mails. Não é necessário modificar o código, pois ele já está configurado para buscar essas variáveis de ambiente no arquivo `.env`.
