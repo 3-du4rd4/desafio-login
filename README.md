@@ -28,7 +28,7 @@ Cadastro de usuário com validações de dados.
 
 Clone o repositório para sua máquina local:
 ```
-git clone https://github.com/seu-usuario/desafio-login.git
+git clone https://github.com/3-du4rd4/desafio-login.git
 cd desafio-login
 ```
 
