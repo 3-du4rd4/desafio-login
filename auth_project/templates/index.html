@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="home_container">
+      <h1>Olá, {{ name }}</h1>
+      <h3>Bem vindo(a), de volta!</h3>
+      <br /><br />
+      
+      <a href="{% url 'logout' %}">
+        <button class="btn">Logout</button>
+    </a>
+    </div>
+  </body>
+</html>

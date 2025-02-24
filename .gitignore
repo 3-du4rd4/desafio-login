@@ -1,0 +1,7 @@
+venv/
+
+auth_project/.env
+
+auth_project/db.sqlite3
+
+auth_project/__pyache__

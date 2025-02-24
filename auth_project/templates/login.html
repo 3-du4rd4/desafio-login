@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="{% static 'password_toggle.js' %}"></script>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Login</h1>
+
+      <div class="error_container">
+        {% if messages %}
+          {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <h5 style="color: firebrick">{{ message }}</h5>
+            {% else %}
+                <h5 style="color: dodgerblue">{{ message }}</h5>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <form method="POST">
+        {% csrf_token %}
+
+        <div class="txt_field">
+          <input type="email" required name="email" id="login-email"/>
+          <span></span>
+          <label for="login-email">Email</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="password" required name="password" id="login-password"/>
+          <span></span>
+          <label for="login-password">Senha</label>
+          <i class="fa fa-eye" id="toggle-password" onclick="showHide('login-password', 'toggle-password')"></i>
+        </div>
+
+        <input type="submit" value="Login" />
+        <div class="signup_link">
+          Não possui registro? <a href="{% url 'register' %}">Registre-se</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

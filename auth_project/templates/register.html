@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="{% static 'password_toggle.js' %}"></script>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Registrar</h1>
+
+      <div class="error_container">
+        {% if messages %}
+          {% for message in messages %}
+            {% if message.tags == 'error' %}
+                <h4 style="color: firebrick">{{ message }}</h4>
+            {% else %}
+                <h4 style="color: dodgerblue">{{ message }}</h4>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <form method="POST">
+        {% csrf_token %}
+
+        <div class="txt_field">
+          <input type="text" required name="name" id="name"/>
+          <span></span>
+          <label for="name">Nome</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="email" required name="email" id="register-email">
+          <span></span>
+          <label for="register-email">E-mail</label>
+        </div>
+
+        <div class="txt_field">
+          <input type="password" required name="password" id="register-password"/>
+          <span></span>
+          <label for="register-password">Senha</label>
+          <i class="fa fa-eye" id="register-toggle-password" onclick="showHide('register-password', 'register-toggle-password')"></i>
+        </div>
+
+        <div class="txt_field">
+          <input type="password" required name="password_confirm" id="register-password-confirm"/>
+          <span></span>
+          <label for="register-password-confirm">Confirmar senha</label>
+          <i class="fa fa-eye" id="register-toggle-password-confirm" onclick="showHide('register-password-confirm', 'register-toggle-password-confirm')"></i>
+        </div>
+
+        <input type="submit" value="Register" />
+        <div class="signup_link">
+          Já possui uma conta? <a href="{% url 'login' %}">Login</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
