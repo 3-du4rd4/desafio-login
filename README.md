@@ -64,6 +64,7 @@ pip install dotenv
 Antes de rodar a aplicação, é necessário configurar o banco de dados e as migrações do Django. Execute o seguinte comando:
 
 ```
+cd auth_project
 python manage.py migrate
 ```
 
