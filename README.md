@@ -68,7 +68,8 @@ python manage.py migrate
 ```
 
 
-5. Criar um Superusuário (Opcional)
+5. **Criar um Superusuário (Opcional)**
+
 Caso queira acessar o painel administrativo do Django, crie um superusuário:
 
 ```
