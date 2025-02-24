@@ -68,33 +68,7 @@ cd auth_project
 python manage.py migrate
 ```
 
-
-5. **Criar um Superusuário (Opcional)**
-
-Caso queira acessar o painel administrativo do Django, crie um superusuário:
-
-```
-python manage.py createsuperuser
-```
-
-Siga as instruções para definir nome de usuário, e-mail e senha.
-
-6. **Rodar o Servidor**
-Agora, você pode rodar o servidor local do Django:
-
-```
-python manage.py runserver
-```
-
-A aplicação estará disponível em: http://127.0.0.1:8000
-
-7. **Acessar a Aplicação**
-
-- Acesse a página de registro: /register/ para criar uma nova conta.
-- Acesse a página de login: /login/ para fazer login com a conta criada.
-- Após o login, você será redirecionado para a página inicial.
-
-## :email: Envio de E-mails
+5. **Configurar o arquivo** `.env`
 
 A aplicação utiliza SMTP para enviar um e-mail de confirmação ao usuário após o cadastro. Para que o envio de e-mails funcione corretamente, você precisará criar um arquivo .env na raiz do projeto com as suas credenciais de e-mail.
 
@@ -117,6 +91,31 @@ SECRET_KEY=gerar_uma_chave_secreta_django
 O Django usará essas credenciais para enviar e-mails. Não é necessário modificar o código, pois ele já está configurado para buscar essas variáveis de ambiente no arquivo `.env`.
 
 Nota: Se você estiver utilizando Gmail, pode ser necessário habilitar o acesso de "aplicativos menos seguros" ou criar uma senha de aplicativo específico, caso tenha a autenticação de dois fatores ativada.
+
+6. **Criar um Superusuário (Opcional)**
+
+Caso queira acessar o painel administrativo do Django, crie um superusuário:
+
+```
+python manage.py createsuperuser
+```
+
+Siga as instruções para definir nome de usuário, e-mail e senha.
+
+7. **Rodar o Servidor**
+Agora, você pode rodar o servidor local do Django:
+
+```
+python manage.py runserver
+```
+
+A aplicação estará disponível em: http://127.0.0.1:8000
+
+8. **Acessar a Aplicação**
+
+- Acesse a página de registro: /register/ para criar uma nova conta.
+- Acesse a página de login: /login/ para fazer login com a conta criada.
+- Após o login, você será redirecionado para a página inicial.
 
 ## ✨ Contribuindo
 Sinta-se à vontade para contribuir com melhorias ou relatar problemas. Para isso, basta realizar um fork deste repositório e enviar um pull request com suas alterações.
